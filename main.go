@@ -132,7 +132,7 @@ import (
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/antirepeat" // 限制复读
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/heisi"      // 黑丝
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/moehu"      // 图库
-	
+
 	//                               ^^^^                               //
 	//                          ^^^^^^^^^^^^^^                          //
 	//                      ^^^^^^^中优先级区^^^^^^^                      //
@@ -157,7 +157,7 @@ import (
 
 	// personal
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/antirecall" // 反撤回
-	
+
 	//                               ^^^^                               //
 	//                          ^^^^^^^^^^^^^^                          //
 	//                      ^^^^^^^低优先级区^^^^^^^                      //

@@ -39,6 +39,11 @@ import (
 
 	_ "github.com/FloatTech/zbputils/job" // 定时指令触发器
 
+	// 高优先级自定义插件
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/custom"   // 自杀（bushi
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/delreply" // 回复撤回
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/event"    // 事件
+
 	//                               ^^^^                               //
 	//                          ^^^^^^^^^^^^^^                          //
 	//                      ^^^^^^^高优先级区^^^^^^^                      //
@@ -123,6 +128,11 @@ import (
 
 	// _ "github.com/FloatTech/ZeroBot-Plugin/plugin/wtf"            // 鬼东西
 
+	// personal
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/antirepeat" // 限制复读
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/heisi"      // 黑丝
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/moehu"      // 图库
+	
 	//                               ^^^^                               //
 	//                          ^^^^^^^^^^^^^^                          //
 	//                      ^^^^^^^中优先级区^^^^^^^                      //
@@ -145,6 +155,9 @@ import (
 
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/ai_reply" // 人工智能回复
 
+	// personal
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/antirecall" // 反撤回
+	
 	//                               ^^^^                               //
 	//                          ^^^^^^^^^^^^^^                          //
 	//                      ^^^^^^^低优先级区^^^^^^^                      //

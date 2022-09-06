@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
-	"strconv"
 	"strings"
 	"time"
 
@@ -24,14 +23,14 @@ import (
 func init() {
 	engine := control.Register("nwife", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault:  false,
-		Help:              "nativewife\n- 抽wife[@xxx]\n- 添加wife[名字][图片]\n- 删除wife[名字]\n- [让 | 不让]所有人均可添加wife",
+		Help:              "nativewife\n- 抽老婆[@xxx]\n- 添加wife[名字][图片]\n- 删除wife[名字]\n- [让 | 不让]所有人均可添加wife",
 		PrivateDataFolder: "nwife",
 	})
 	base := engine.DataFolder()
 	baseuri := "file:///" + file.BOTPATH + "/" + base
-	engine.OnPrefix("抽wife", zero.OnlyGroup).SetBlock(true).
+	engine.OnPrefix("抽老婆").SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
-			grpf := strconv.FormatInt(ctx.Event.GroupID, 36)
+			grpf := "weigui"
 			wifes, err := os.ReadDir(base + "/" + grpf)
 			if err != nil {
 				ctx.SendChain(message.Text("一个wife也没有哦~"))
@@ -41,8 +40,10 @@ func init() {
 			case 0:
 				ctx.SendChain(message.Text("一个wife也没有哦~"))
 			case 1:
+                                // 获取名字
+				name := ctx.NickName()
 				wn := wifes[0].Name()
-				ctx.SendChain(message.Text("大家的wife都是", wn, "\n"), message.Image(baseuri+"/"+grpf+"/"+wn), message.Text("\n哦~"))
+				ctx.SendChain(message.Text(name, "さんが二次元で結婚するであろうヒロインは、", "\n"), message.Image(baseuri+"/"+grpf+"/"+wn), message.Text("\n", wn))
 			default:
 				// 获取名字
 				name := ctx.NickName()
@@ -51,11 +52,11 @@ func init() {
 				r := rand.New(rand.NewSource(int64(binary.LittleEndian.Uint64(s[:]))))
 				n := r.Intn(len(wifes))
 				wn := wifes[n].Name()
-				ctx.SendChain(message.Text(name, "的wife是", wn, "\n"), message.Image(baseuri+"/"+grpf+"/"+wn), message.Text("\n哦~"))
+				ctx.SendChain(message.Text(name, "さんが二次元で結婚するであろうヒロインは、", "\n"), message.Image(baseuri+"/"+grpf+"/"+wn), message.Text("\n", wn))
 			}
 		})
 	// 上传一张图
-	engine.OnPrefix("添加wife", zero.OnlyGroup, chkAddWifePermission, zero.MustProvidePicture).SetBlock(true).
+	engine.OnPrefix("添加wife", chkAddWifePermission, zero.MustProvidePicture).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			name := ""
 			for _, elem := range ctx.Event.Message {
@@ -69,7 +70,7 @@ func init() {
 			}
 			if name != "" {
 				url := ctx.State["image_url"].([]string)[0]
-				grpfolder := base + "/" + strconv.FormatInt(ctx.Event.GroupID, 36)
+				grpfolder := base + "/" + "weigui"
 				if file.IsNotExist(grpfolder) {
 					err := os.Mkdir(grpfolder, 0755)
 					if err != nil {
@@ -87,7 +88,7 @@ func init() {
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), message.Text("没有找到wife的名字！"))
 			}
 		})
-	engine.OnPrefix("删除wife", zero.OnlyGroup, zero.AdminPermission).SetBlock(true).
+	engine.OnPrefix("删除wife", zero.AdminPermission).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			name := ""
 			for _, elem := range ctx.Event.Message {
@@ -100,7 +101,7 @@ func init() {
 				}
 			}
 			if name != "" {
-				grpfolder := base + "/" + strconv.FormatInt(ctx.Event.GroupID, 36)
+				grpfolder := base + "/" + "weigui"
 				err := os.Remove(grpfolder + "/" + name)
 				if err == nil {
 					ctx.SendChain(message.Reply(ctx.Event.MessageID), message.Text("成功！"))

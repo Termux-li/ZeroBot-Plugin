@@ -40,7 +40,7 @@ func init() {
 			case 0:
 				ctx.SendChain(message.Text("一个wife也没有哦~"))
 			case 1:
-                                // 获取名字
+				// 获取名字
 				name := ctx.NickName()
 				wn := wifes[0].Name()
 				ctx.SendChain(message.Text(name, "さんが二次元で結婚するであろうヒロインは、", "\n"), message.Image(baseuri+"/"+grpf+"/"+wn), message.Text("\n", wn))

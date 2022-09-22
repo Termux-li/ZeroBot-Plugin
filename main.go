@@ -157,9 +157,6 @@ import (
 
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/ai_reply" // 人工智能回复
 
-	// personal
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/antirecall" // 反撤回
-
 	//                               ^^^^                               //
 	//                          ^^^^^^^^^^^^^^                          //
 	//                      ^^^^^^^低优先级区^^^^^^^                      //

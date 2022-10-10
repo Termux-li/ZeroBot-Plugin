@@ -1,5 +1,5 @@
-// Package nativewife 本地老婆
-package nativewife
+// Package mywife 本地老婆
+package mywife
 
 import (
 	"crypto/md5"

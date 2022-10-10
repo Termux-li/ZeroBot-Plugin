@@ -135,6 +135,7 @@ import (
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/antirepeat" // 限制复读
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/heisi"      // 黑丝
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/moehu"      // 图库
+        _ "github.com/FloatTech/ZeroBot-Plugin/plugin/mywife"     // 本地老婆
 
 	//                               ^^^^                               //
 	//                          ^^^^^^^^^^^^^^                          //

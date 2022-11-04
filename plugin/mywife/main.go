@@ -23,7 +23,8 @@ import (
 func init() {
 	engine := control.Register("mywife", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault:  false,
-		Help:              "nativewife\n- 抽老婆[@xxx]\n- 添加wife[名字][图片]\n- 删除wife[名字]\n- [让 | 不让]所有人均可添加wife",
+                Brief:             "本地老婆",
+		Help:              "- 抽老婆[@xxx]\n- 添加wife[名字][图片]\n- 删除wife[名字]\n- [让 | 不让]所有人均可添加wife",
 		PrivateDataFolder: "mywife",
 	})
 	base := engine.DataFolder()

@@ -190,8 +190,8 @@ var (
 	}
 	en = control.Register("moehu", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault:  true,
-		Help:              "moehuAPI\n" +
-                                   "- 随机<数量>张[类型]\n" +
+                Brief:             "随机图片",
+		Help:              "- 随机<数量>张[类型]\n" +
                                    "- 示例： 随机10张雷姆\n" +
                                    "- 清空[所有|类型]缓存\n" +
                                    "- [开启|关闭]使用缓存\n" +

@@ -16,8 +16,8 @@ import (
 func init() {
 	engine := control.Register("custom", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault: false,
-		Help: "自定义插件集合\n" +
-			" - /kill\n" +
+                Brief:  "公告，留言",
+		Help:   " - /kill\n" +
 			" - 来114514份涩图\n" +
 			" - /发送公告\n" +
 			" - @bot给主人留言<内容>",

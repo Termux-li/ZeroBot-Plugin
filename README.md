@@ -251,7 +251,8 @@ zerobot [-h] [-n nickname] [-t token] [-u url] [-p prefix] [-d|w] [-c|s config.j
 
   `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/thesaurus"`
 
-  - [x] @Bot 关键词
+  - [x] 切换[kimo|傲娇|可爱]词库
+  - [x] 设置词库触发概率0.x (0<x<9)
 
 </details>
 <details>
@@ -631,6 +632,20 @@ print("run[CQ:image,file="+j["img"]+"]")
   - [x] 发大病
 
   - [x] 教你一篇小作文[作文]
+
+</details>
+<details>
+  <summary>女装</summary>
+
+  `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/dress"`
+
+  - [x] 女装
+
+  - [x] 男装
+  
+  - [x] 随机女装
+  
+  - [x] 随机男装
 
 </details>
 <details>
@@ -1371,9 +1386,9 @@ print("run[CQ:image,file="+j["img"]+"]")
 
   ###### `"github.com/FloatTech/ZeroBot-Plugin/plugin/ygo/ygotrade.go"`
   - [x] 查卡价 [卡名]
-  - [x] 查卡价 [卡名] [稀有度 稀有度 ...]
+  - [x] 查卡价 [卡名] -r [稀有度 稀有度 ...]
   - [x] 查卡店  [卡名]
-  - [x] 查卡店  [卡名] [稀有度]
+  - [x] 查卡店  [卡名] -r [稀有度]
   - 注：卡店只支持单个稀有度查询
 	
 </details>

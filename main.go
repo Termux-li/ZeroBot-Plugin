@@ -150,7 +150,7 @@ import (
 	// personal
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/antirepeat" // 限制复读
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/moehu"      // 图库
-        _ "github.com/FloatTech/ZeroBot-Plugin/plugin/mywife"     // 本地老婆
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/mywife"     // 本地老婆
 
 	//                               ^^^^                               //
 	//                          ^^^^^^^^^^^^^^                          //
@@ -176,8 +176,7 @@ import (
 
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/breakrepeat" // 打断复读
 
-
-        // personal
+	// personal
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/antirecall" // 反撤回
 
 	//                               ^^^^                               //

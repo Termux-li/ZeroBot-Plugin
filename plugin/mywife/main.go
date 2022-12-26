@@ -79,7 +79,7 @@ func init() {
 						return
 					}
 				}
-				err := file.DownloadTo(url, grpfolder+"/"+name, true)
+				err := file.DownloadTo(url, grpfolder+"/"+name)
 				if err == nil {
 					ctx.SendChain(message.Reply(ctx.Event.MessageID), message.Text("成功！"))
 				} else {

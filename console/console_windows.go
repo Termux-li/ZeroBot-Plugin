@@ -1,3 +1,4 @@
+// Package console sets console's behavior on init
 package console
 
 import (
@@ -11,13 +12,13 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/FloatTech/ZeroBot-Plugin/kanban"
+	"github.com/FloatTech/ZeroBot-Plugin/kanban/banner"
 )
 
 var (
 	//go:linkname modkernel32 golang.org/x/sys/windows.modkernel32
 	modkernel32         *windows.LazyDLL
-	procSetConsoleTitle = modkernel32.NewProc("SetConsoleTitle")
+	procSetConsoleTitle = modkernel32.NewProc("SetConsoleTitleW")
 )
 
 //go:linkname errnoErr golang.org/x/sys/windows.errnoErr
@@ -72,13 +73,13 @@ func init() {
 	mode |= windows.ENABLE_PROCESSED_OUTPUT            // 启用处理后的输出
 
 	err = windows.SetConsoleMode(stdout, mode)
-	if err != nil {
-		panic(err)
-	}
 	// windows 带颜色 log 自定义格式
-	logrus.SetFormatter(&LogFormat{})
+	logrus.SetFormatter(&logFormat{hasColor: err == nil})
+	if err != nil {
+		logrus.Warnln("VT100设置失败, 将以无色模式输出")
+	}
 
-	err = setConsoleTitle("ZeroBot-Blugin " + kanban.Version + " " + kanban.Copyright)
+	err = setConsoleTitle("ZeroBot-Blugin " + banner.Version + " " + banner.Copyright)
 	if err != nil {
 		panic(err)
 	}
@@ -95,17 +96,23 @@ const (
 	colorReset     = "\x1b[0m"
 )
 
-// LogFormat specialize for zbp
-type LogFormat struct{}
+// logFormat specialize for zbp
+type logFormat struct {
+	hasColor bool
+}
 
 // Format implements logrus.Formatter
-func (f LogFormat) Format(entry *logrus.Entry) ([]byte, error) {
+func (f logFormat) Format(entry *logrus.Entry) ([]byte, error) {
 	buf := new(bytes.Buffer)
 
 	buf.WriteByte('[')
-	buf.WriteString(getLogLevelColorCode(entry.Level))
+	if f.hasColor {
+		buf.WriteString(getLogLevelColorCode(entry.Level))
+	}
 	buf.WriteString(strings.ToUpper(entry.Level.String()))
-	buf.WriteString(colorReset)
+	if f.hasColor {
+		buf.WriteString(colorReset)
+	}
 	buf.WriteString("] ")
 	buf.WriteString(entry.Message)
 	buf.WriteString(" \n")

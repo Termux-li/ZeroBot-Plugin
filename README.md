@@ -1618,7 +1618,7 @@ print("run[CQ:image,file="+j["img"]+"]")
 2. clone 并进入本项目，下载所需包
 
 ```bash
-git clone --depth=1 https://github.com/FloatTech/ZeroBot-Plugin.git
+git clone --depth=1 https://github.com/weigui404/ZeroBot-Plugin.git
 cd ZeroBot-Plugin
 go version
 go env -w GOPROXY=https://goproxy.cn,direct

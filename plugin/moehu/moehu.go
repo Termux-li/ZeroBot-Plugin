@@ -48,10 +48,10 @@ const (
 
 var (
 	groupSingle = single.New(
-		single.WithKeyFn(func(ctx *zero.Ctx) int64 {
+		single.WithKeyFn(func(_ *zero.Ctx) int64 {
 			return ctx.Event.GroupID
 		}),
-		single.WithPostFn[int64](func(ctx *zero.Ctx) {
+		single.WithPostFn[int64](func(_ *zero.Ctx) {
 			ctx.Send("等一下，还有操作还未完成哦~")
 		}),
 	)

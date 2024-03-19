@@ -23,7 +23,7 @@ func init() {
 			" - @bot给主人留言<内容>",
 	})
 	engine.OnFullMatchGroup([]string{"pause", "restart", "/kill"}, zero.OnlyToMe, zero.SuperUserPermission).SetBlock(true).
-		Handle(func(ctx *zero.Ctx) {
+		Handle(func(_ *zero.Ctx) {
 			os.Exit(0)
 		})
 	engine.OnRegex(`^来(.*)涩图`, zero.OnlyGroup, zero.KeywordRule("114514")).SetBlock(true).

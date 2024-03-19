@@ -209,7 +209,7 @@ func init() {
 			}
 		})
 
-	engine.OnMessage(config.isgroupexist).SetBlock(false).Handle(func(ctx *zero.Ctx) {
+	engine.OnMessage(config.isgroupexist).SetBlock(false).Handle(func(_ *zero.Ctx) {
 		group := config.groupof(ctx.Event.GroupID)
 		if !bool(group.Enable) {
 			return

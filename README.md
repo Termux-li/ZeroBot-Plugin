@@ -242,6 +242,8 @@ zerobot [-h] [-m] [-n nickname] [-t token] [-u url] [-g url] [-p prefix] [-d|w] 
   - [x] 列出所有提醒
 
   - [x] 翻牌
+  
+  - [x] 赞我
 
   - [x] [开启 | 关闭]入群验证
 
@@ -961,6 +963,24 @@ print("run[CQ:image,file="+j["img"]+"]")
 
 </details>
 <details>
+  <summary>桑帛云 API</summary>
+
+  `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/lolimi"`
+
+  - [x] 随机妹子
+
+  - [x] 随机绕口令
+
+  - [x] 颜值鉴定[图片]
+  
+  - [x] 随机情话
+
+  - [x] 发病 嘉然
+
+  - [x] 让[塔菲|嘉然|东雪莲]说我测尼玛
+
+</details>
+<details>
   <summary>MagicPrompt-Stable-Diffusion吟唱提示</summary>
 
   `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/magicprompt"`
@@ -1011,10 +1031,6 @@ print("run[CQ:image,file="+j["img"]+"]")
   <summary>日韩 VITS 模型拟声</summary>
 
   `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/moegoe"`
-
-  - [x] 让[宁宁|爱瑠|芳乃|茉子|丛雨|小春|七海]说(日语)
-
-  - [x] 让[수아|미미르|아린|연화|유화|선배]说(韩语)
 
   - [x] 让[派蒙|空|荧|阿贝多|枫原万叶|温迪|八重神子|纳西妲|钟离|诺艾尔|凝光|托马|北斗|莫娜|荒泷一斗|提纳里|芭芭拉|艾尔海森|雷电将军|赛诺|琴|班尼特|五郎|神里绫华|迪希雅|夜兰|辛焱|安柏|宵宫|云堇|妮露|烟绯|鹿野院平藏|凯亚|达达利亚|迪卢克|可莉|早柚|香菱|重云|刻晴|久岐忍|珊瑚宫心海|迪奥娜|戴因斯雷布|魈|神里绫人|丽莎|优菈|凯瑟琳|雷泽|菲谢尔|九条裟罗|甘雨|行秋|胡桃|迪娜泽黛|柯莱|申鹤|砂糖|萍姥姥|奥兹|罗莎莉亚|式大将|哲平|坎蒂丝|托克|留云借风真君|昆钧|塞琉斯|多莉|大肉丸|莱依拉|散兵|拉赫曼|杜拉夫|阿守|玛乔丽|纳比尔|海芭夏|九条镰治|阿娜耶|阿晃|阿扎尔|七七|博士|白术|埃洛伊|大慈树王|女士|丽塔|失落迷迭|缭乱星棘|伊甸|伏特加女孩|狂热蓝调|莉莉娅|萝莎莉娅|八重樱|八重霞|卡莲|第六夜想曲|卡萝尔|姬子|极地战刃|布洛妮娅|次生银翼|理之律者|迷城骇兔|希儿|魇夜星渊|黑希儿|帕朵菲莉丝|天元骑英|幽兰黛尔|德丽莎|月下初拥|朔夜观星|暮光骑士|明日香|李素裳|格蕾修|梅比乌斯|渡鸦|人之律者|爱莉希雅|爱衣|天穹游侠|琪亚娜|空之律者|薪炎之律者|云墨丹心|符华|识之律者|维尔薇|芽衣|雷之律者|阿波尼亚]说(中文)
 
@@ -1249,14 +1265,6 @@ print("run[CQ:image,file="+j["img"]+"]")
   - [x] 搜图[P站图片ID]
 
   - [x] 设置 saucenao api key [apikey]
-
-</details>
-<details>
-  <summary>叔叔的AI二次元图片放大</summary>
-
-  `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/scale"`
-
-  - [x] 放大图片[图片]
 
 </details>
 <details>
@@ -1519,6 +1527,18 @@ print("run[CQ:image,file="+j["img"]+"]")
 
 </details>
 <details>
+  <summary>鬼东西</summary>
+
+  `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/wtf"`
+
+  - [x] 鬼东西列表
+
+  - [x] 查询鬼东西[序号][@xxx]
+
+  - 注：由于需要科学，默认注释。
+
+</details>
+<details>
   <summary>一些游戏王插件</summary>
 
   `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/ygo"`
@@ -1558,15 +1578,39 @@ print("run[CQ:image,file="+j["img"]+"]")
 
 </details>
 <details>
-  <summary>鬼东西</summary>
+  <summary>遇见API</summary>
 
-  `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/wtf"`
-
-  - [x] 鬼东西列表
-
-  - [x] 查询鬼东西[序号][@xxx]
-
-  - 注：由于需要科学，默认注释。
+  `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/yujn"`
+  
+  - [x] 小姐姐视频
+  - [x] 小姐姐视频2
+  - [x] 黑丝视频
+  - [x] 白丝视频
+  - [x] 欲梦视频
+  - [x] 甜妹视频
+  - [x] 双倍快乐
+  - [x] 纯情女高
+  - [x] 萝莉视频
+  - [x] 玉足视频
+  - [x] 帅哥视频
+  - [x] 热舞视频
+  - [x] 吊带视频
+  - [x] 汉服视频
+  - [x] 极品狱卒
+  - [x] 清纯视频
+  - [x] 快手变装
+  - [x] 抖音变装
+  - [x] 萌娃视频
+  - [x] 穿搭视频
+  - [x] 完美身材
+  - [x] 御姐撒娇
+  - [x] 绿茶语音
+  - [x] 怼人语音
+  - [x] 随机骚话
+  - [x] 随机污句子
+  - [x] 随机美句
+  - [x] 土味情话   
+  - [x] 让[丁真|陈泽|梅西|孙笑川|科比|懒羊羊|胡桃|雫るる]说我测尼玛
 
 </details>
 
